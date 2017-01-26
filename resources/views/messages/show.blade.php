@@ -6,4 +6,9 @@
 
     <p>{{ $message->content }}</p>
 
+    {!! link_to_route('messages.edit', 'メッセージ編集', ['id' => $message->id]) !!}
+
+    {!! Form::model($message, ['route' => ['messages.destroy', $message->id], 'method' => 'delete']) !!}
+           {!! Form::submit('削除') !!}
+
 @endsection
